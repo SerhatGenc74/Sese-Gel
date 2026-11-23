@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "publishedAt": "2026-11-23T21:07:39.014Z",
+  "notes": "SesliSohbet Ekosistemi v0.1.0: Web sitesinden otomatik guncelleme denetimi ve kurulum sureci, kalici profil/avatar, P2P metin sohbeti ve 25 MB dosya aktarimi, ek sunucusuz canli oda listesi ve seslisohbet:// derin baglanti destegi.",
+  "siteUrl": "https://serhatgenc74.github.io/Sese-Gelin",
+  "platforms": {
+    "windows-x86_64": {
+      "installerType": "nsis",
+      "fileName": "SesliSohbet_0.1.0_x64-setup.exe",
+      "url": "p-versions/SesliSohbet_0.1.0_x64-setup.exe",
+      "sha256": "59efa45fdafbca64b1be46ed979751be07ac07e5c0afad05ac06e23572c06bdc",
+      "sizeBytes": 5538130
+    },
+    "windows-msi": {
+      "installerType": "msi",
+      "fileName": "SesliSohbet_0.1.0_x64_en-US.msi",
+      "url": "p-versions/SesliSohbet_0.1.0_x64_en-US.msi",
+      "sha256": "ac2412ee907852ea4c24196835b75cd9c1cec52febf267f4d9a0e9bb6bed5060",
+      "sizeBytes": 8237056
+    },
+    "windows-portable": {
+      "installerType": "portable",
+      "fileName": "sesli-sohbet-app.exe",
+      "url": "p-versions/sesli-sohbet-app.exe",
+      "sha256": "d56b5a4ecd9489a1ea76aa52192c2a253a092f8cd7cd81659e24af795af3fdad",
+      "sizeBytes": 22961664
+    }
+  }
+}
