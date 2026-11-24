@@ -1,6 +1,6 @@
 {
-  "version": "0.7.0",
-  "publishedAt": "2026-11-24T09:22:56.101Z",
+  "version": "0.7.1",
+  "publishedAt": "2026-11-24T10:06:19.203Z",
   "notes": "Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim\n• [Yeni] Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur.\n• [Yeni] Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis.\n• [Tasarim] Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi.\n• [Duzeltme] Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
@@ -133,22 +133,22 @@
     "windows-portable": {
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
-      "url": "p-versions/v0.5.1/sesli-sohbet-app.exe",
-      "sha256": "65037ba743640b249d87e3d0a4ead2825fbb1b31c41b91e3a7fc17a135965dda",
-      "sizeBytes": 23341568
+      "url": "p-versions/v0.7.1/sesli-sohbet-app.exe",
+      "sha256": "4ed18b18afa898fe81a3c7d48503f9bb5182954163fa7d3fa8d0cffe09661606",
+      "sizeBytes": 23014400
     },
     "windows-x86_64": {
       "installerType": "nsis",
-      "fileName": "Sese-Gel_0.5.1_x64-setup.exe",
-      "url": "p-versions/v0.5.1/Sese-Gel_0.5.1_x64-setup.exe",
-      "sha256": "7b864dd33ef61c54a9987b142c7310a0dce649f8552f9cca6061510d6e2dc73e",
-      "sizeBytes": 5667543
+      "fileName": "Sese-Gel_0.7.1_x64-setup.exe",
+      "url": "p-versions/v0.7.1/Sese-Gel_0.7.1_x64-setup.exe",
+      "sha256": "d23d7d433655a34a6c03346d87839865f868cd4d777456281e3fb45ed3a60a04",
+      "sizeBytes": 5746209
     },
     "windows-msi": {
       "installerType": "msi",
-      "fileName": "Sese-Gel_0.5.1_x64_en-US.msi",
-      "url": "p-versions/v0.5.1/Sese-Gel_0.5.1_x64_en-US.msi",
-      "sha256": "a18b050d9ccb2576684b2a27772fd7d53304171ff5d3d89bd97d582fa948ef43",
+      "fileName": "Sese-Gel_0.7.1_x64_en-US.msi",
+      "url": "p-versions/v0.7.1/Sese-Gel_0.7.1_x64_en-US.msi",
+      "sha256": "f3d759461962155857f7c8d0102fe55f10f5336ed7d54acbc038cf554c6cb046",
       "sizeBytes": 8474624
     }
   }

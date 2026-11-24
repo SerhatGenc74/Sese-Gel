@@ -402,7 +402,7 @@
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.7.0</strong>
+          <strong id="latestVersionText">v0.7.1</strong>
           <a href="./version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">version.json</a>
         </div>
       </header>
@@ -670,7 +670,7 @@
             return;
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.7.0').replace(/^v/, '');
+          versionEl.textContent = 'v' + String(manifest.version || '0.7.1').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
           renderPatchNotes(manifest);
           if (manifest.publishedAt) {
@@ -735,7 +735,7 @@
           const badgeEl = document.getElementById('patchVersionBadge');
           const headlineEl = document.getElementById('patchHeadlineText');
           const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
-          const ver = String(manifest.version || '0.7.0').replace(/^v/, '');
+          const ver = String(manifest.version || '0.7.1').replace(/^v/, '');
           badgeEl.textContent = 'v' + ver;
 
           if (patches.length === 0) {
