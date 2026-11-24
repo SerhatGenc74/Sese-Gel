@@ -8,10 +8,10 @@
     <style>
       :root {
         color-scheme: dark;
-        --surface-base: #1e1f22;
-        --surface-panel: #2b2d31;
-        --surface-card: #313338;
-        --surface-elevated: #383a40;
+        --surface-base: #0b0d12;
+        --surface-panel: rgba(18, 22, 34, 0.92);
+        --surface-card: rgba(15, 19, 30, 0.92);
+        --surface-elevated: rgba(32, 39, 59, 0.9);
         --accent: #5865f2;
         --accent-hover: #4752c4;
         --speaking: #23a55a;
@@ -20,7 +20,7 @@
         --ink-primary: #f2f3f5;
         --ink-secondary: #b5bac1;
         --ink-muted: #949ba4;
-        --border: rgba(255, 255, 255, 0.1);
+        --border: rgba(255, 255, 255, 0.09);
       }
 
       * {
@@ -31,13 +31,16 @@
         margin: 0;
         min-height: 100vh;
         background-color: var(--surface-base);
+        background-image:
+          radial-gradient(circle at 14% 10%, rgba(88, 101, 242, 0.16), transparent 42%),
+          radial-gradient(circle at 86% 88%, rgba(35, 165, 90, 0.1), transparent 44%);
         color: var(--ink-primary);
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         line-height: 1.5;
       }
 
       .container {
-        max-width: 1060px;
+        max-width: 1080px;
         margin: 0 auto;
         padding: 36px 20px 64px;
       }
@@ -48,7 +51,13 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
+        padding: 18px 22px;
+        border-radius: 28px;
+        background: var(--surface-panel);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
       }
 
       .brand {
@@ -58,15 +67,15 @@
       }
 
       .brand-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
         background: var(--accent);
         display: flex;
         align-items: center;
         justify-content: center;
         color: #fff;
-        box-shadow: 0 10px 24px rgba(88, 101, 242, 0.35);
+        box-shadow: 0 10px 26px rgba(88, 101, 242, 0.35);
       }
 
       .brand h1 {
@@ -86,9 +95,9 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 6px 12px;
+        padding: 7px 14px;
         border-radius: 999px;
-        background: var(--surface-card);
+        background: rgba(255, 255, 255, 0.05);
         border: 1px solid var(--border);
         font-size: 0.8rem;
         color: var(--ink-secondary);
@@ -100,11 +109,12 @@
       }
 
       .panel {
-        background: var(--surface-panel);
+        background: linear-gradient(180deg, rgba(22, 27, 42, 0.94) 0%, rgba(15, 19, 30, 0.96) 100%);
         border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 24px;
+        border-radius: 30px;
+        padding: 26px;
         margin-bottom: 24px;
+        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
       }
 
       .hero-grid {
@@ -145,46 +155,49 @@
         justify-content: center;
         gap: 8px;
         border: none;
-        border-radius: 11px;
-        padding: 11px 18px;
+        border-radius: 999px;
+        padding: 11px 20px;
         font-size: 0.9rem;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
         cursor: pointer;
-        transition: filter 0.15s ease, background-color 0.15s ease;
+        transition: filter 0.15s ease, transform 0.12s ease, background-color 0.15s ease;
       }
 
       .btn:hover {
         filter: brightness(1.08);
+        transform: translateY(-1px);
       }
 
       .btn-primary {
         background: var(--accent);
         color: #fff;
+        box-shadow: 0 0 24px rgba(88, 101, 242, 0.35);
       }
 
       .btn-green {
         background: var(--speaking);
-        color: #111317;
+        color: #08130c;
+        box-shadow: 0 0 22px rgba(35, 165, 90, 0.3);
       }
 
       .btn-secondary {
-        background: var(--surface-elevated);
+        background: rgba(255, 255, 255, 0.07);
         color: var(--ink-primary);
         border: 1px solid var(--border);
       }
 
       .btn-sm {
-        padding: 7px 12px;
+        padding: 7px 14px;
         font-size: 0.78rem;
-        border-radius: 8px;
+        border-radius: 999px;
       }
 
       .notes-box {
         background: var(--surface-card);
         border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 16px;
+        border-radius: 22px;
+        padding: 18px;
         font-size: 0.85rem;
         color: var(--ink-secondary);
       }
@@ -219,14 +232,15 @@
       }
 
       .card {
-        background: var(--surface-card);
+        background: linear-gradient(180deg, rgba(24, 29, 43, 0.95) 0%, rgba(16, 20, 31, 0.95) 100%);
         border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 16px;
+        border-radius: 24px;
+        padding: 18px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 12px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
       }
 
       .card-title {
@@ -388,7 +402,7 @@
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.5.1</strong>
+          <strong id="latestVersionText">v0.7.0</strong>
           <a href="./version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">version.json</a>
         </div>
       </header>
@@ -567,6 +581,17 @@
           return clean;
         }
 
+        function compareSemverStrings(a, b) {
+          const pa = String(a || '0.0.0').replace(/^v/, '').split('.').map((n) => parseInt(n, 10) || 0);
+          const pb = String(b || '0.0.0').replace(/^v/, '').split('.').map((n) => parseInt(n, 10) || 0);
+          for (let i = 0; i < 3; i += 1) {
+            if ((pa[i] || 0) !== (pb[i] || 0)) {
+              return (pa[i] || 0) - (pb[i] || 0);
+            }
+          }
+          return 0;
+        }
+
         async function loadManifest() {
           const versionEl = document.getElementById('latestVersionText');
           const notesEl = document.getElementById('releaseNotesText');
@@ -574,6 +599,7 @@
           const gridEl = document.getElementById('platformGrid');
           const primaryBtn = document.getElementById('primaryDownloadBtn');
           const osHintEl = document.getElementById('detectedOsHint');
+          const staticVersion = String(versionEl.textContent || '0.7.0').replace(/^v/, '').trim();
 
           let manifest = null;
           let loadedFromPVersions = false;
@@ -583,9 +609,13 @@
             { path: './p-versions/version.json' + cacheBust, inPVersions: true },
           ]) {
             try {
-              const res = await fetch(candidate.path);
+              const res = await fetch(candidate.path, { cache: 'no-store' });
               if (res.ok) {
-                manifest = await res.json();
+                const parsed = await res.json();
+                if (candidate.inPVersions && compareSemverStrings(parsed.version, staticVersion) < 0) {
+                  continue;
+                }
+                manifest = parsed;
                 loadedFromPVersions = candidate.inPVersions;
                 break;
               }
@@ -597,11 +627,15 @@
           if (!manifest || !manifest.platforms) {
             for (const apiUrl of GITHUB_RELEASE_APIS) {
               try {
-                const ghRes = await fetch(apiUrl);
+                const ghRes = await fetch(apiUrl, { cache: 'no-store' });
                 if (ghRes.ok) {
                   const rel = await ghRes.json();
+                  const tagVer = String(rel.tag_name || staticVersion).replace(/^v/, '');
+                  if (compareSemverStrings(tagVer, staticVersion) < 0) {
+                    continue;
+                  }
                   manifest = {
-                    version: String(rel.tag_name || '0.1.0').replace(/^v/, ''),
+                    version: tagVer,
                     publishedAt: rel.published_at || '',
                     notes: rel.body || 'Yeni sürüm GitHub Releases üzerinde yayınlandı.',
                     platforms: {},
@@ -636,7 +670,7 @@
             return;
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.5.1').replace(/^v/, '');
+          versionEl.textContent = 'v' + String(manifest.version || '0.7.0').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
           renderPatchNotes(manifest);
           if (manifest.publishedAt) {
@@ -701,7 +735,7 @@
           const badgeEl = document.getElementById('patchVersionBadge');
           const headlineEl = document.getElementById('patchHeadlineText');
           const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
-          const ver = String(manifest.version || '0.5.1').replace(/^v/, '');
+          const ver = String(manifest.version || '0.7.0').replace(/^v/, '');
           badgeEl.textContent = 'v' + ver;
 
           if (patches.length === 0) {

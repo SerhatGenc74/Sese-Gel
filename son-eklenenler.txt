@@ -1,3 +1,9 @@
+[v0.7.0] - 2026-11-24 | Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim
+- [Yeni] Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur.
+- [Yeni] Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis.
+- [Tasarim] Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi.
+- [Duzeltme] Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller.
+
 [v0.5.1] - 2026-11-24 | Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme, Overlay ve Surum Klasorleme
 - [Yeni] Uygulama adi resmi olarak "Sese Gel" olarak guncellendi; masaustu, sistem tepsisi ve web indirme portali icin ozel studo ikonu eklendi.
 - [Yeni] Sesli gorusme sirasinda kamera acabilme ve karsi taraflarin canli goruntulerini kart icinde / odak sahnesinde izleyebilme ozelligi eklendi.

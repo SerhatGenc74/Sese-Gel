@@ -1,9 +1,32 @@
 {
-  "version": "0.5.1",
-  "publishedAt": "2026-11-24T08:59:03.186Z",
-  "notes": "Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme, Overlay ve Surum Klasorleme\n• [Yeni] Uygulama adi resmi olarak \"Sese Gel\" olarak guncellendi; masaustu, sistem tepsisi ve web indirme portali icin ozel studo ikonu eklendi.\n• [Yeni] Sesli gorusme sirasinda kamera acabilme ve karsi taraflarin canli goruntulerini kart icinde / odak sahnesinde izleyebilme ozelligi eklendi.\n• [Yeni] Yuksek kaliteli ekran paylasimi (getDisplayMedia) ve odakli sahne goruntuleyici (yayin secici + tam ekran) eklendi.\n• [Yeni] Sohbette gonderilen kendi mesajlarini satir ici duzenleme (\"(duzenlendi)\" etiketi) ve kalici olarak P2P silme (\"Bu mesaj silindi\") ozelligi eklendi.\n• [Yeni] Discord tarzi acilip kapanabilir sol ust overlay penceresi eklendi: aktif konusmacilari seffaf, ustte sabit ve tiklama gecirgen pencerede avatar + halka + susturma ikonlariyla gosterir.\n• [Yeni] version.json ana index.html yanina tasindi ve her surum paketi docs/p-versions/v<surum>/ alt klasorunde duzenlendi.\n• [Tasarim] Katilimci ses kartlari oval/yuvarlak studyo kapsulleri (oval capsule & halka tasarimi) olarak bastan tasarlandi.",
+  "version": "0.7.0",
+  "publishedAt": "2026-11-24T09:22:56.101Z",
+  "notes": "Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim\n• [Yeni] Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur.\n• [Yeni] Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis.\n• [Tasarim] Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi.\n• [Duzeltme] Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
+    {
+      "version": "0.7.0",
+      "date": "2026-11-24",
+      "title": "Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis."
+        },
+        {
+          "tag": "Tasarim",
+          "text": "Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller."
+        }
+      ]
+    },
     {
       "version": "0.5.1",
       "date": "2026-11-24",
@@ -111,21 +134,21 @@
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
       "url": "p-versions/v0.5.1/sesli-sohbet-app.exe",
-      "sha256": "a39ab7c3d21fca1962fbfb06f39a2a4ea3c4faa00fe9dcfec95abfe060599266",
-      "sizeBytes": 23328768
+      "sha256": "65037ba743640b249d87e3d0a4ead2825fbb1b31c41b91e3a7fc17a135965dda",
+      "sizeBytes": 23341568
     },
     "windows-x86_64": {
       "installerType": "nsis",
       "fileName": "Sese-Gel_0.5.1_x64-setup.exe",
       "url": "p-versions/v0.5.1/Sese-Gel_0.5.1_x64-setup.exe",
-      "sha256": "5bf78355be7f96f7415e84cfc9f1056e9643481864375ea410f17ba7e2b7028a",
-      "sizeBytes": 5676828
+      "sha256": "7b864dd33ef61c54a9987b142c7310a0dce649f8552f9cca6061510d6e2dc73e",
+      "sizeBytes": 5667543
     },
     "windows-msi": {
       "installerType": "msi",
       "fileName": "Sese-Gel_0.5.1_x64_en-US.msi",
       "url": "p-versions/v0.5.1/Sese-Gel_0.5.1_x64_en-US.msi",
-      "sha256": "ed1779fa4ee907f705a2d27f94e5ff4006d0a71079321c78f4df71191a949dc2",
+      "sha256": "a18b050d9ccb2576684b2a27772fd7d53304171ff5d3d89bd97d582fa948ef43",
       "sizeBytes": 8474624
     }
   }
