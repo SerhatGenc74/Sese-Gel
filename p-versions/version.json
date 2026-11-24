@@ -1,29 +1,97 @@
 {
-  "version": "0.1.0",
-  "publishedAt": "2026-11-23T21:07:39.014Z",
-  "notes": "SesliSohbet Ekosistemi v0.1.0: Web sitesinden otomatik guncelleme denetimi ve kurulum sureci, kalici profil/avatar, P2P metin sohbeti ve 25 MB dosya aktarimi, ek sunucusuz canli oda listesi ve seslisohbet:// derin baglanti destegi.",
-  "siteUrl": "https://serhatgenc74.github.io/Sese-Gelin",
+  "version": "0.2.0",
+  "publishedAt": "2026-11-24T08:26:39.135Z",
+  "notes": "Yeni Sesli Oda Tasarimi, Dosya Onay Sistemi, RAM Optimizasyonu ve P1 Paketi\n• [Tasarim] Sesli sohbet sayfasi studyo kalitesinde bastan tasarlandi: ferah sahne yerlesimi, canli konusma dalga halkalari, oturum sayaci, modern cam alt kontrol cubugu ve tam yukseklik sohbet cekmecesi.\n• [Yeni] P2P dosya aktariminda karsi taraf icin Kabul Et / Reddet onay mekanizmasi eklendi; alici onaylamadan dosya parcaciklari gonderilmez.\n• [Yeni] Dosya gonderildiginde, alindiginda veya indirildiginde ekranda animasyonlu gorsel bildirim (feedback toast) ve \"Indirildi\" durumu gosterilir.\n• [Yeni] Araclar arasina yayinla.bat eklendi: alinan build paketlerini tek tikla docs/p-versions/ klasorune tasir, eski paketleri temizler ve versiyonu/yama notlarini gunceller.\n• [Performans] Dosya gonderiminde 25 MB'lik tam bellek kopyalama yerine 16 KB akisli parca okuma (file.slice), pencere gizliyken WebRTC/VAD yoklamalarini durdurma, bos Web Audio baglamlarini uyutma, oda ici MQTT rehberini durdurma ve mesaj gecmisini 150 ile sinirlama ile RAM kullanimi dusuruldu.\n• [Yeni] Oda icinden sohbeti kesmeden Ana Menu'ye donme (alt mini arama cubugu) ve kapat (X) tusunda sag alt sistem tepsisine kucultme eklendi.\n• [Yeni] Ev sahibi odadan tek basina ayrilip ayni odaya geri katilabilir; Iroh sabit kimlik tohumu ile kalici Sabit Kanallar olusturulabilir.\n• [Yeni] Sesli odalar icin sifre korumasi, canli sifre degistirme, katilimi acip kapama ve Web Audio arayuz/oda giris ses efektleri eklendi.\n• [Duzeltme] Oda kilitlendiginde oda sahibinin seslerinin kesilmesi hatasi ve Linux WebKitGTK mikrofon/oynatma ses sorunlari giderildi; TCP_NODELAY ve Opus SDP gecikme (ms) optimizasyonlari yapildi.",
+  "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
+  "patches": [
+    {
+      "version": "0.2.0",
+      "date": "2026-11-24",
+      "title": "Yeni Sesli Oda Tasarimi, Dosya Onay Sistemi, RAM Optimizasyonu ve P1 Paketi",
+      "items": [
+        {
+          "tag": "Tasarim",
+          "text": "Sesli sohbet sayfasi studyo kalitesinde bastan tasarlandi: ferah sahne yerlesimi, canli konusma dalga halkalari, oturum sayaci, modern cam alt kontrol cubugu ve tam yukseklik sohbet cekmecesi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "P2P dosya aktariminda karsi taraf icin Kabul Et / Reddet onay mekanizmasi eklendi; alici onaylamadan dosya parcaciklari gonderilmez."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Dosya gonderildiginde, alindiginda veya indirildiginde ekranda animasyonlu gorsel bildirim (feedback toast) ve \"Indirildi\" durumu gosterilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Araclar arasina yayinla.bat eklendi: alinan build paketlerini tek tikla docs/p-versions/ klasorune tasir, eski paketleri temizler ve versiyonu/yama notlarini gunceller."
+        },
+        {
+          "tag": "Performans",
+          "text": "Dosya gonderiminde 25 MB'lik tam bellek kopyalama yerine 16 KB akisli parca okuma (file.slice), pencere gizliyken WebRTC/VAD yoklamalarini durdurma, bos Web Audio baglamlarini uyutma, oda ici MQTT rehberini durdurma ve mesaj gecmisini 150 ile sinirlama ile RAM kullanimi dusuruldu."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Oda icinden sohbeti kesmeden Ana Menu'ye donme (alt mini arama cubugu) ve kapat (X) tusunda sag alt sistem tepsisine kucultme eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ev sahibi odadan tek basina ayrilip ayni odaya geri katilabilir; Iroh sabit kimlik tohumu ile kalici Sabit Kanallar olusturulabilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sesli odalar icin sifre korumasi, canli sifre degistirme, katilimi acip kapama ve Web Audio arayuz/oda giris ses efektleri eklendi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Oda kilitlendiginde oda sahibinin seslerinin kesilmesi hatasi ve Linux WebKitGTK mikrofon/oynatma ses sorunlari giderildi; TCP_NODELAY ve Opus SDP gecikme (ms) optimizasyonlari yapildi."
+        }
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-11-24",
+      "title": "Ilk Ekosistem Surumu",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Web indirme portali (docs/index.html), docs/p-versions/ yapisi ve https://serhatgenc74.github.io/Sese-Gel adresinden otomatik guncelleme denetimi ve kurulum akisi eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "localStorage uzerinde kalici profil adi, 160x160 sikistirilmis profil fotografi ve ses aygiti tercihleri eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "P2P metin sohbeti ve 25 MB'a kadar gorsel/dosya aktarimi (RTCDataChannel) eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ek sunucusuz MQTT-over-WSS canli aktif oda listesi ve seslisohbet:// derin baglanti ile tek tikla katılım eklendi."
+        }
+      ]
+    }
+  ],
   "platforms": {
-    "windows-x86_64": {
-      "installerType": "nsis",
-      "fileName": "SesliSohbet_0.1.0_x64-setup.exe",
-      "url": "p-versions/SesliSohbet_0.1.0_x64-setup.exe",
-      "sha256": "59efa45fdafbca64b1be46ed979751be07ac07e5c0afad05ac06e23572c06bdc",
-      "sizeBytes": 5538130
-    },
-    "windows-msi": {
-      "installerType": "msi",
-      "fileName": "SesliSohbet_0.1.0_x64_en-US.msi",
-      "url": "p-versions/SesliSohbet_0.1.0_x64_en-US.msi",
-      "sha256": "ac2412ee907852ea4c24196835b75cd9c1cec52febf267f4d9a0e9bb6bed5060",
-      "sizeBytes": 8237056
-    },
     "windows-portable": {
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
       "url": "p-versions/sesli-sohbet-app.exe",
-      "sha256": "d56b5a4ecd9489a1ea76aa52192c2a253a092f8cd7cd81659e24af795af3fdad",
-      "sizeBytes": 22961664
+      "sha256": "24e8be31eb4f4d5fa8d7ce4fcd2061fedc73c18882c8e16256e438e6b6e5d35d",
+      "sizeBytes": 23203328
+    },
+    "windows-x86_64": {
+      "installerType": "nsis",
+      "fileName": "SesliSohbet_0.2.0_x64-setup.exe",
+      "url": "p-versions/SesliSohbet_0.2.0_x64-setup.exe",
+      "sha256": "503ff0cced335a89bb9e21deb535c7d5e8a48ad077fc8bf79476601eb2f824f1",
+      "sizeBytes": 5593333
+    },
+    "windows-msi": {
+      "installerType": "msi",
+      "fileName": "SesliSohbet_0.2.0_x64_en-US.msi",
+      "url": "p-versions/SesliSohbet_0.2.0_x64_en-US.msi",
+      "sha256": "e1a9021de92b9390170e21835066dc96a8c7973ad71fd2e2d1cf65229b2be02b",
+      "sizeBytes": 8310784
     }
   }
 }
