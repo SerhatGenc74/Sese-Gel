@@ -388,8 +388,8 @@
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.5.0</strong>
-          <a href="./p-versions/version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">p-versions/version.json</a>
+          <strong id="latestVersionText">v0.5.1</strong>
+          <a href="./version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">version.json</a>
         </div>
       </header>
 
@@ -398,7 +398,7 @@
           <div>
             <h2 class="hero-title">Tek tıkla indir, kendi kendini güncelleyen masaüstü deneyimine katıl</h2>
             <p class="hero-desc">
-              Uygulama açılışta bu sitenin <code class="mono">p-versions/version.json</code> dosyasını denetler,
+              Uygulama açılışta bu sitenin <code class="mono">version.json</code> dosyasını denetler,
               SHA-256 doğrulaması ile yeni sürümü indirir ve otomatik günceller. Aşağıdan işletim sistemine
               uygun kurulumu indir veya canlı odalardan birine anında bağlan.
             </p>
@@ -576,11 +576,11 @@
           const osHintEl = document.getElementById('detectedOsHint');
 
           let manifest = null;
-          let loadedFromPVersions = true;
+          let loadedFromPVersions = false;
           const cacheBust = '?t=' + String(Date.now());
           for (const candidate of [
-            { path: './p-versions/version.json' + cacheBust, inPVersions: true },
             { path: './version.json' + cacheBust, inPVersions: false },
+            { path: './p-versions/version.json' + cacheBust, inPVersions: true },
           ]) {
             try {
               const res = await fetch(candidate.path);
@@ -636,7 +636,7 @@
             return;
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.2.0').replace(/^v/, '');
+          versionEl.textContent = 'v' + String(manifest.version || '0.5.1').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
           renderPatchNotes(manifest);
           if (manifest.publishedAt) {
@@ -701,7 +701,7 @@
           const badgeEl = document.getElementById('patchVersionBadge');
           const headlineEl = document.getElementById('patchHeadlineText');
           const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
-          const ver = String(manifest.version || '0.2.0').replace(/^v/, '');
+          const ver = String(manifest.version || '0.5.1').replace(/^v/, '');
           badgeEl.textContent = 'v' + ver;
 
           if (patches.length === 0) {

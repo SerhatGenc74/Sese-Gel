@@ -1,9 +1,10 @@
-[v0.5.0] - 2026-11-24 | Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme ve Discord Tarzi Overlay
+[v0.5.1] - 2026-11-24 | Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme, Overlay ve Surum Klasorleme
 - [Yeni] Uygulama adi resmi olarak "Sese Gel" olarak guncellendi; masaustu, sistem tepsisi ve web indirme portali icin ozel studo ikonu eklendi.
 - [Yeni] Sesli gorusme sirasinda kamera acabilme ve karsi taraflarin canli goruntulerini kart icinde / odak sahnesinde izleyebilme ozelligi eklendi.
 - [Yeni] Yuksek kaliteli ekran paylasimi (getDisplayMedia) ve odakli sahne goruntuleyici (yayin secici + tam ekran) eklendi.
 - [Yeni] Sohbette gonderilen kendi mesajlarini satir ici duzenleme ("(duzenlendi)" etiketi) ve kalici olarak P2P silme ("Bu mesaj silindi") ozelligi eklendi.
 - [Yeni] Discord tarzi acilip kapanabilir sol ust overlay penceresi eklendi: aktif konusmacilari seffaf, ustte sabit ve tiklama gecirgen pencerede avatar + halka + susturma ikonlariyla gosterir.
+- [Yeni] version.json ana index.html yanina tasindi ve her surum paketi docs/p-versions/v<surum>/ alt klasorunde duzenlendi.
 - [Tasarim] Katilimci ses kartlari oval/yuvarlak studyo kapsulleri (oval capsule & halka tasarimi) olarak bastan tasarlandi.
 
 [v0.2.0] - 2026-11-24 | Yeni Sesli Oda Tasarimi, Dosya Onay Sistemi, RAM Optimizasyonu ve P1 Paketi
