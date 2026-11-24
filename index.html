@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SesliSohbet — İndirme Merkezi &amp; Canlı Oda Rehberi</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <title>Sese Gel — İndirme Merkezi &amp; Canlı Oda Rehberi</title>
     <style>
       :root {
         color-scheme: dark;
@@ -320,27 +321,74 @@
         font-size: 0.8rem;
         color: var(--ink-secondary);
       }
+
+      .patch-list {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 9px;
+      }
+
+      .patch-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: var(--surface-card);
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        padding: 10px 13px;
+        font-size: 0.84rem;
+        color: var(--ink-secondary);
+      }
+
+      .patch-tag {
+        flex-shrink: 0;
+        border-radius: 999px;
+        padding: 2px 9px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-top: 2px;
+      }
+
+      .patch-tag-yeni { background: rgba(35, 165, 90, 0.2); color: #5ce193; }
+      .patch-tag-tasarim { background: rgba(88, 101, 242, 0.24); color: #b7c0ff; }
+      .patch-tag-performans { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; }
+      .patch-tag-duzeltme { background: rgba(240, 178, 50, 0.2); color: #fcd34d; }
+
+      .patch-details {
+        margin-top: 14px;
+        background: var(--surface-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 14px;
+      }
+
+      .patch-details summary {
+        cursor: pointer;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--ink-primary);
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <header class="topbar">
         <div class="brand">
-          <div class="brand-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-            </svg>
+          <div class="brand-icon" aria-hidden="true" style="padding: 0; overflow: hidden; background: transparent;">
+            <img src="./favicon.png" alt="Sese Gel" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
           </div>
           <div>
-            <h1>SesliSohbet Ekosistemi</h1>
-            <p>7/24 sunucusuz Iroh P2P &amp; Cloudflare tünelli sesli sohbet, metin/dosya paylaşımı ve canlı oda rehberi</p>
+            <h1>Sese Gel Ekosistemi</h1>
+            <p>7/24 sunucusuz Iroh P2P &amp; Cloudflare tünelli sesli/görüntülü sohbet, ekran paylaşımı ve canlı oda rehberi</p>
           </div>
         </div>
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.1.0</strong>
+          <strong id="latestVersionText">v0.5.0</strong>
           <a href="./p-versions/version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">p-versions/version.json</a>
         </div>
       </header>
@@ -380,6 +428,17 @@
           <span class="meta">Windows (NSIS / MSI) &amp; Linux (AppImage / DEB)</span>
         </div>
         <div id="platformGrid" class="platform-grid"></div>
+      </section>
+
+      <section id="patch-notes" class="panel">
+        <div class="section-header">
+          <div>
+            <h2>Yeni Sürümde Gelenler <span id="patchVersionBadge" class="status-badge connected">v0.2.0</span></h2>
+            <p id="patchHeadlineText" class="meta" style="margin: 4px 0 0">Yama notları yükleniyor...</p>
+          </div>
+          <a href="./son-eklenenler.txt" class="btn btn-secondary btn-sm">Tam Yama Dosyası (son-eklenenler.txt)</a>
+        </div>
+        <div id="patchNotesContainer" class="empty-box">Yama notları yükleniyor...</div>
       </section>
 
       <section id="live-rooms" class="panel">
@@ -448,7 +507,10 @@
         ];
         const TOPIC_PREFIX = 'sese-gelin/v1/rooms';
         const STALE_ROOM_MAX_AGE_MS = 180000;
-        const GITHUB_LATEST_API = 'https://api.github.com/repos/SerhatGenc74/Sese-Gelin/releases/latest';
+        const GITHUB_RELEASE_APIS = [
+          'https://api.github.com/repos/SerhatGenc74/Sese-Gel/releases/latest',
+          'https://api.github.com/repos/SerhatGenc74/Sese-Gelin/releases/latest',
+        ];
 
         const PLATFORM_LABELS = {
           'windows-x86_64': { title: 'Windows Kurulum (EXE)', subtitle: 'Önerilen NSIS kurulumu' },
@@ -533,36 +595,39 @@
           }
 
           if (!manifest || !manifest.platforms) {
-            try {
-              const ghRes = await fetch(GITHUB_LATEST_API);
-              if (ghRes.ok) {
-                const rel = await ghRes.json();
-                manifest = {
-                  version: String(rel.tag_name || '0.1.0').replace(/^v/, ''),
-                  publishedAt: rel.published_at || '',
-                  notes: rel.body || 'Yeni sürüm GitHub Releases üzerinde yayınlandı.',
-                  platforms: {},
-                };
-                for (const asset of rel.assets || []) {
-                  const name = String(asset.name || '');
-                  const lower = name.toLowerCase();
-                  let key = null;
-                  if (lower.endsWith('-setup.exe') || lower.endsWith('.exe')) key = 'windows-x86_64';
-                  else if (lower.endsWith('.msi')) key = 'windows-msi';
-                  else if (lower.endsWith('.appimage')) key = 'linux-x86_64';
-                  else if (lower.endsWith('.deb')) key = 'linux-deb';
-                  if (key && !manifest.platforms[key]) {
-                    manifest.platforms[key] = {
-                      fileName: name,
-                      url: asset.browser_download_url,
-                      sizeBytes: asset.size,
-                      sha256: '',
-                    };
+            for (const apiUrl of GITHUB_RELEASE_APIS) {
+              try {
+                const ghRes = await fetch(apiUrl);
+                if (ghRes.ok) {
+                  const rel = await ghRes.json();
+                  manifest = {
+                    version: String(rel.tag_name || '0.1.0').replace(/^v/, ''),
+                    publishedAt: rel.published_at || '',
+                    notes: rel.body || 'Yeni sürüm GitHub Releases üzerinde yayınlandı.',
+                    platforms: {},
+                  };
+                  for (const asset of rel.assets || []) {
+                    const name = String(asset.name || '');
+                    const lower = name.toLowerCase();
+                    let key = null;
+                    if (lower.endsWith('-setup.exe') || lower.endsWith('.exe')) key = 'windows-x86_64';
+                    else if (lower.endsWith('.msi')) key = 'windows-msi';
+                    else if (lower.endsWith('.appimage')) key = 'linux-x86_64';
+                    else if (lower.endsWith('.deb')) key = 'linux-deb';
+                    if (key && !manifest.platforms[key]) {
+                      manifest.platforms[key] = {
+                        fileName: name,
+                        url: asset.browser_download_url,
+                        sizeBytes: asset.size,
+                        sha256: '',
+                      };
+                    }
                   }
+                  break;
                 }
+              } catch {
+                // Sonraki GitHub API adresini dene
               }
-            } catch {
-              // Ag kapaliysa varsayilan gorunumu koru
             }
           }
 
@@ -571,8 +636,9 @@
             return;
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.1.0').replace(/^v/, '');
+          versionEl.textContent = 'v' + String(manifest.version || '0.2.0').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
+          renderPatchNotes(manifest);
           if (manifest.publishedAt) {
             const d = new Date(manifest.publishedAt);
             if (!Number.isNaN(d.getTime())) {
@@ -620,6 +686,72 @@
               );
             })
             .join('');
+        }
+
+        function resolvePatchTagClass(tag) {
+          const lower = String(tag || '').toLowerCase();
+          if (lower.includes('tasar')) return 'patch-tag-tasarim';
+          if (lower.includes('performans') || lower.includes('ram')) return 'patch-tag-performans';
+          if (lower.includes('duzelt') || lower.includes('düzelt') || lower.includes('fix')) return 'patch-tag-duzeltme';
+          return 'patch-tag-yeni';
+        }
+
+        function renderPatchNotes(manifest) {
+          const container = document.getElementById('patchNotesContainer');
+          const badgeEl = document.getElementById('patchVersionBadge');
+          const headlineEl = document.getElementById('patchHeadlineText');
+          const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
+          const ver = String(manifest.version || '0.2.0').replace(/^v/, '');
+          badgeEl.textContent = 'v' + ver;
+
+          if (patches.length === 0) {
+            headlineEl.textContent = 'Güncel sürüm özeti';
+            container.className = 'notes-box';
+            container.textContent = manifest.notes || 'Yeni sürüm yayınlandı.';
+            return;
+          }
+
+          const latest = patches.find((p) => p.version === ver) || patches[0];
+          const older = patches.filter((p) => p !== latest);
+          headlineEl.textContent = (latest.title || '') + (latest.date ? ' • ' + latest.date : '');
+          container.className = '';
+
+          const renderItems = (items) =>
+            '<ul class="patch-list">' +
+            (items || [])
+              .map(
+                (item) =>
+                  '<li class="patch-item">' +
+                  '<span class="patch-tag ' + resolvePatchTagClass(item.tag) + '">' +
+                  escapeHtml(item.tag || 'Yeni') +
+                  '</span>' +
+                  '<span>' + escapeHtml(item.text || '') + '</span>' +
+                  '</li>'
+              )
+              .join('') +
+            '</ul>';
+
+          let html = renderItems(latest.items);
+          if (older.length > 0) {
+            html +=
+              '<details class="patch-details"><summary>Önceki Sürümler (' +
+              escapeHtml(older.map((p) => 'v' + p.version).join(', ')) +
+              ')</summary>' +
+              older
+                .map(
+                  (p) =>
+                    '<div style="margin-top:12px"><strong style="font-size:0.84rem">v' +
+                    escapeHtml(p.version) +
+                    ' — ' +
+                    escapeHtml(p.title || '') +
+                    '</strong>' +
+                    renderItems(p.items) +
+                    '</div>'
+                )
+                .join('') +
+              '</details>';
+          }
+          container.innerHTML = html;
         }
 
         // --- Saf MQTT 3.1.1 over WSS istemcisi (Ek sunucusuz canli oda listesi) ---
@@ -775,12 +907,18 @@
             .map((room) => {
               const deepLink = 'seslisohbet://join?code=' + encodeURIComponent(room.roomCode);
               const providerLabel = room.tunnelProvider === 'cloudflare' ? 'Cloudflare' : 'Iroh P2P';
+              const passwordBadge = room.requiresPassword
+                ? '<span class="status-badge" style="background:rgba(88,101,242,.22);color:#eef0ff">Şifreli</span>'
+                : '';
               return (
                 '<article class="card">' +
                 '<div>' +
                 '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px">' +
                 '<h3 class="card-title">' + escapeHtml(room.roomName || 'Sesli Oda') + '</h3>' +
+                '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">' +
                 '<span class="status-badge">' + escapeHtml(providerLabel) + '</span>' +
+                passwordBadge +
+                '</div>' +
                 '</div>' +
                 '<p class="meta" style="margin:6px 0 0">Oda Sahibi: <strong>' + escapeHtml(room.hostName || 'Kullanıcı') + '</strong> • ' +
                 escapeHtml(String(room.participantCount || 1)) + ' Kişi • ' + escapeHtml(formatAge(room.updatedAtIso)) + '</p>' +
