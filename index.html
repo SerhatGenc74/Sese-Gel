@@ -402,7 +402,7 @@
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.7.3</strong>
+          <strong id="latestVersionText">v0.7.4</strong>
           <a href="./version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">version.json</a>
         </div>
       </header>
@@ -439,15 +439,23 @@
       <section id="downloads" class="panel">
         <div class="section-header">
           <h2>Kurulum Paketleri</h2>
-          <span class="meta">Windows (NSIS / MSI) &amp; Linux (AppImage / DEB)</span>
+          <span class="meta">Windows (NSIS / MSI / Portable) &amp; Linux (AppImage / DEB)</span>
         </div>
         <div id="platformGrid" class="platform-grid"></div>
+        <details class="patch-details" style="margin-top: 16px">
+          <summary>Linux Kurulum Notları (Ubuntu, Debian, Fedora, Arch — PipeWire &amp; Wayland/X11)</summary>
+          <div class="meta" style="margin-top: 8px; line-height: 1.65">
+            <div><strong style="color: var(--ink-primary)">AppImage:</strong> <code class="mono">chmod +x Sese-Gel_*.AppImage &amp;&amp; ./Sese-Gel_*.AppImage</code></div>
+            <div><strong style="color: var(--ink-primary)">Debian / Ubuntu (.deb):</strong> <code class="mono">sudo apt install ./Sese-Gel_*_amd64.deb</code></div>
+            <div style="margin-top: 4px">Ses ve ekran paylaşımı için Linux üzerinde PulseAudio/PipeWire + <code class="mono">webkit2gtk-4.1</code> desteklenir.</div>
+          </div>
+        </details>
       </section>
 
       <section id="patch-notes" class="panel">
         <div class="section-header">
           <div>
-            <h2>Yeni Sürümde Gelenler <span id="patchVersionBadge" class="status-badge connected">v0.2.0</span></h2>
+            <h2>Yeni Sürümde Gelenler <span id="patchVersionBadge" class="status-badge connected">v0.7.4</span></h2>
             <p id="patchHeadlineText" class="meta" style="margin: 4px 0 0">Yama notları yükleniyor...</p>
           </div>
           <a href="./son-eklenenler.txt" class="btn btn-secondary btn-sm">Tam Yama Dosyası (son-eklenenler.txt)</a>
@@ -670,7 +678,37 @@
             return;
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.7.3').replace(/^v/, '');
+          manifest.platforms = manifest.platforms || {};
+          const hasLinuxAssets = Boolean(manifest.platforms['linux-x86_64'] || manifest.platforms['linux-deb']);
+          if (!hasLinuxAssets) {
+            for (const apiUrl of GITHUB_RELEASE_APIS) {
+              try {
+                const ghRes = await fetch(apiUrl, { cache: 'no-store' });
+                if (!ghRes.ok) continue;
+                const rel = await ghRes.json();
+                for (const asset of rel.assets || []) {
+                  const name = String(asset.name || '');
+                  const lower = name.toLowerCase();
+                  let key = null;
+                  if (lower.endsWith('.appimage')) key = 'linux-x86_64';
+                  else if (lower.endsWith('.deb')) key = 'linux-deb';
+                  if (key && !manifest.platforms[key]) {
+                    manifest.platforms[key] = {
+                      fileName: name,
+                      url: asset.browser_download_url,
+                      sizeBytes: asset.size,
+                      sha256: '',
+                    };
+                  }
+                }
+                if (manifest.platforms['linux-x86_64'] || manifest.platforms['linux-deb']) break;
+              } catch {
+                // GitHub Releases erisilemezse yerel paketlerle devam et
+              }
+            }
+          }
+
+          versionEl.textContent = 'v' + String(manifest.version || '0.7.4').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
           renderPatchNotes(manifest);
           if (manifest.publishedAt) {
@@ -681,8 +719,8 @@
           }
 
           const preferredKey = detectClientPlatformKey();
-          const platforms = manifest.platforms || {};
-          const preferredAsset = platforms[preferredKey] || platforms['windows-x86_64'] || Object.values(platforms)[0];
+          const platforms = manifest.platforms;
+          const preferredAsset = platforms[preferredKey] || (preferredKey.startsWith('linux') ? platforms['linux-deb'] : null) || platforms['windows-x86_64'] || Object.values(platforms)[0];
           if (preferredAsset && preferredAsset.url) {
             primaryBtn.setAttribute('href', normalizeAssetUrl(preferredAsset.url, loadedFromPVersions));
             primaryBtn.textContent = 'İndir — ' + (PLATFORM_LABELS[preferredKey]?.title || 'Masaüstü Uygulaması');
@@ -702,15 +740,22 @@
           gridEl.innerHTML = entries
             .map(([key, asset]) => {
               const info = PLATFORM_LABELS[key] || { title: key, subtitle: 'Kurulum paketi' };
+              const isLinux = key.startsWith('linux');
+              const osBadge = isLinux
+                ? '<span class="status-badge connected">Linux</span>'
+                : '<span class="status-badge">Windows</span>';
               const resolvedUrl = normalizeAssetUrl(asset.url, loadedFromPVersions);
               const shaLine = asset.sha256
                 ? 'SHA-256: ' + escapeHtml(String(asset.sha256).slice(0, 16)) + '...'
-                : 'SHA-256: Yayın derlemesinde üretilir';
+                : 'SHA-256: GitHub Release';
               return (
                 '<article class="card">' +
                 '<div>' +
+                '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px">' +
                 '<h3 class="card-title">' + escapeHtml(info.title) + '</h3>' +
-                '<p class="meta" style="margin:4px 0 8px">' + escapeHtml(info.subtitle) + '</p>' +
+                osBadge +
+                '</div>' +
+                '<p class="meta" style="margin:2px 0 8px">' + escapeHtml(info.subtitle) + '</p>' +
                 '<p class="meta mono" style="margin:0">' + escapeHtml(asset.fileName || '') + '</p>' +
                 '<p class="meta" style="margin:4px 0 0">' + escapeHtml(formatBytes(asset.sizeBytes)) + '</p>' +
                 '<p class="meta mono" style="margin:4px 0 0">' + shaLine + '</p>' +
@@ -735,7 +780,7 @@
           const badgeEl = document.getElementById('patchVersionBadge');
           const headlineEl = document.getElementById('patchHeadlineText');
           const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
-          const ver = String(manifest.version || '0.7.3').replace(/^v/, '');
+          const ver = String(manifest.version || '0.7.4').replace(/^v/, '');
           badgeEl.textContent = 'v' + ver;
 
           if (patches.length === 0) {

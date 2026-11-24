@@ -1,3 +1,10 @@
+[v0.7.3] - 2026-11-24 | Overlay Profil Fotolari, Yayin Cozunurlugu, Masaustu/Uygulama Sesi, Kanal Secimi ve Linux CI
+- [Yeni] Ekran/pencere paylasimina 480p / 720p HD / 1080p Full HD cozunurluk secimi ile Windows WASAPI uzerinden yankisiz Masaustu Sesi ve Secili Uygulama Sesi paylasimi eklendi; izleyiciler icin sahnede ozel yayin ses kontrolu eklendi.
+- [Yeni] Oda kurarken bulunulan rehber kanali (#genel vb.) dogrudan kart icinde goruntulenir ve aninda degistirilebilir; oda ust cubugunda da aktif kanal rozeti gosterilir.
+- [Yeni] GitHub Actions ve docs indirme portali Windows (NSIS/MSI/Portable) + Linux (AppImage/DEB) paketlerini tek yayin hattinda sunacak sekilde guncellendi.
+- [Duzeltme] Windows Win32 UpdateLayeredWindow overlay uzerinde WebP/JPEG profil fotograflarinin gercek gorsel olarak gorunmesi saglandi ve overlay basligindaki oda kodu gizlendi.
+- [Duzeltme] Ilk sesli gorusmeden cikis/oda kurma kilitlenmeleri zaman asimi korumalariyla giderildi ve modern studyo arayuz sesleri eklendi.
+
 [v0.7.0] - 2026-11-24 | Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim
 - [Yeni] Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur.
 - [Yeni] Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis.
