@@ -402,7 +402,7 @@
 
         <div class="version-pill">
           <span>Güncel Sürüm:</span>
-          <strong id="latestVersionText">v0.7.4</strong>
+          <strong id="latestVersionText">v0.8.0</strong>
           <a href="./version.json" class="mono" style="color: var(--ink-muted); text-decoration: none">version.json</a>
         </div>
       </header>
@@ -455,7 +455,7 @@
       <section id="patch-notes" class="panel">
         <div class="section-header">
           <div>
-            <h2>Yeni Sürümde Gelenler <span id="patchVersionBadge" class="status-badge connected">v0.7.4</span></h2>
+            <h2>Yeni Sürümde Gelenler <span id="patchVersionBadge" class="status-badge connected">v0.8.0</span></h2>
             <p id="patchHeadlineText" class="meta" style="margin: 4px 0 0">Yama notları yükleniyor...</p>
           </div>
           <a href="./son-eklenenler.txt" class="btn btn-secondary btn-sm">Tam Yama Dosyası (son-eklenenler.txt)</a>
@@ -708,7 +708,7 @@
             }
           }
 
-          versionEl.textContent = 'v' + String(manifest.version || '0.7.4').replace(/^v/, '');
+          versionEl.textContent = 'v' + String(manifest.version || '0.8.0').replace(/^v/, '');
           notesEl.textContent = manifest.notes || 'Yeni özellikler ve kararlılık iyileştirmeleri.';
           renderPatchNotes(manifest);
           if (manifest.publishedAt) {
@@ -780,7 +780,7 @@
           const badgeEl = document.getElementById('patchVersionBadge');
           const headlineEl = document.getElementById('patchHeadlineText');
           const patches = Array.isArray(manifest.patches) ? manifest.patches : [];
-          const ver = String(manifest.version || '0.7.4').replace(/^v/, '');
+          const ver = String(manifest.version || '0.8.0').replace(/^v/, '');
           badgeEl.textContent = 'v' + ver;
 
           if (patches.length === 0) {

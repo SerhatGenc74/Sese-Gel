@@ -1,3 +1,10 @@
+[v0.8.0] - 2026-11-26 | Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma
+- [Yeni] Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur.
+- [Yeni] Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi.
+- [Yeni] Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer.
+- [Performans] Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu.
+- [Duzeltme] Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi.
+
 [v0.7.3] - 2026-11-24 | Overlay Profil Fotolari, Yayin Cozunurlugu, Masaustu/Uygulama Sesi, Kanal Secimi ve Linux CI
 - [Yeni] Ekran/pencere paylasimina 480p / 720p HD / 1080p Full HD cozunurluk secimi ile Windows WASAPI uzerinden yankisiz Masaustu Sesi ve Secili Uygulama Sesi paylasimi eklendi; izleyiciler icin sahnede ozel yayin ses kontrolu eklendi.
 - [Yeni] Oda kurarken bulunulan rehber kanali (#genel vb.) dogrudan kart icinde goruntulenir ve aninda degistirilebilir; oda ust cubugunda da aktif kanal rozeti gosterilir.

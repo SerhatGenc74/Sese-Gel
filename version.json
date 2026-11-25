@@ -1,9 +1,36 @@
 {
-  "version": "0.7.4",
-  "publishedAt": "2026-11-24T21:09:08.888Z",
-  "notes": "Overlay Profil Fotolari, Yayin Cozunurlugu, Masaustu/Uygulama Sesi, Kanal Secimi ve Linux CI\n• [Yeni] Ekran/pencere paylasimina 480p / 720p HD / 1080p Full HD cozunurluk secimi ile Windows WASAPI uzerinden yankisiz Masaustu Sesi ve Secili Uygulama Sesi paylasimi eklendi; izleyiciler icin sahnede ozel yayin ses kontrolu eklendi.\n• [Yeni] Oda kurarken bulunulan rehber kanali (#genel vb.) dogrudan kart icinde goruntulenir ve aninda degistirilebilir; oda ust cubugunda da aktif kanal rozeti gosterilir.\n• [Yeni] GitHub Actions ve docs indirme portali Windows (NSIS/MSI/Portable) + Linux (AppImage/DEB) paketlerini tek yayin hattinda sunacak sekilde guncellendi.\n• [Duzeltme] Windows Win32 UpdateLayeredWindow overlay uzerinde WebP/JPEG profil fotograflarinin gercek gorsel olarak gorunmesi saglandi ve overlay basligindaki oda kodu gizlendi.\n• [Duzeltme] Ilk sesli gorusmeden cikis/oda kurma kilitlenmeleri zaman asimi korumalariyla giderildi ve modern studyo arayuz sesleri eklendi.",
+  "version": "0.8.0",
+  "publishedAt": "2026-11-25T22:07:05.302Z",
+  "notes": "Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma\n• [Yeni] Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur.\n• [Yeni] Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi.\n• [Yeni] Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer.\n• [Performans] Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu.\n• [Duzeltme] Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
+    {
+      "version": "0.8.0",
+      "date": "2026-11-26",
+      "title": "Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer."
+        },
+        {
+          "tag": "Performans",
+          "text": "Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi."
+        }
+      ]
+    },
     {
       "version": "0.7.3",
       "date": "2026-11-24",
@@ -157,26 +184,26 @@
     }
   ],
   "platforms": {
-    "windows-portable": {
-      "installerType": "portable",
-      "fileName": "sesli-sohbet-app.exe",
-      "url": "p-versions/v0.7.4/sesli-sohbet-app.exe",
-      "sha256": "a5c28ee4a6c241ee78d87c76cdb061b1cce56832683e0ea7f5f88edef70f2aef",
-      "sizeBytes": 23490560
-    },
     "windows-x86_64": {
       "installerType": "nsis",
-      "fileName": "Sese-Gel_0.7.4_x64-setup.exe",
-      "url": "p-versions/v0.7.4/Sese-Gel_0.7.4_x64-setup.exe",
-      "sha256": "5c8fcede0108c1b0f9f66b190043728342c5123bd226c3e01f49db32fa936a39",
-      "sizeBytes": 5900063
+      "fileName": "Sese-Gel_0.8.0_x64-setup.exe",
+      "url": "p-versions/v0.8.0/Sese-Gel_0.8.0_x64-setup.exe",
+      "sha256": "33c16fae3e59f642617751440c0fe67a80e67754f575dc537f00e50d30d016e0",
+      "sizeBytes": 4671675
     },
     "windows-msi": {
       "installerType": "msi",
-      "fileName": "Sese-Gel_0.7.4_x64_en-US.msi",
-      "url": "p-versions/v0.7.4/Sese-Gel_0.7.4_x64_en-US.msi",
-      "sha256": "87e5ea7d5c89fbdb58fbba8f5db47e365b8db11013f069330d2af4fd5b090538",
-      "sizeBytes": 8663040
+      "fileName": "Sese-Gel_0.8.0_x64_en-US.msi",
+      "url": "p-versions/v0.8.0/Sese-Gel_0.8.0_x64_en-US.msi",
+      "sha256": "4c8a8447e357e9d81a5389119af01fa9f5301d8d65e3bceedb92777fc0eeb4e9",
+      "sizeBytes": 6643712
+    },
+    "windows-portable": {
+      "installerType": "portable",
+      "fileName": "sesli-sohbet-app.exe",
+      "url": "p-versions/v0.8.0/sesli-sohbet-app.exe",
+      "sha256": "0d3a3ef92205ada808b5a333b43c6be10407c7039d80c9396ab7adcfb75ea6d5",
+      "sizeBytes": 16723456
     }
   }
 }
