@@ -1,3 +1,11 @@
+[v0.8.2] - 2026-11-26 | YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri
+- [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).
+- [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.
+- [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).
+- [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.
+- [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.
+- [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli "Mikrofonu Kapat/Ac", "Sesi Kapat/Ac" ve "Odadan Ayril" hizli kontrolleri eklendi.
+
 [v0.8.0] - 2026-11-26 | Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma
 - [Yeni] Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur.
 - [Yeni] Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi.

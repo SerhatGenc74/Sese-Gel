@@ -1,9 +1,40 @@
 {
-  "version": "0.8.0",
-  "publishedAt": "2026-11-25T22:07:05.302Z",
-  "notes": "Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma\n• [Yeni] Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur.\n• [Yeni] Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi.\n• [Yeni] Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer.\n• [Performans] Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu.\n• [Duzeltme] Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi.",
+  "version": "0.8.2",
+  "publishedAt": "2026-11-26T09:29:56.846Z",
+  "notes": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri\n• [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).\n• [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.\n• [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).\n• [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.\n• [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.\n• [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
+    {
+      "version": "0.8.2",
+      "date": "2026-11-26",
+      "title": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri",
+      "items": [
+        {
+          "tag": "Duzeltme",
+          "text": "Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama)."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS)."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi."
+        }
+      ]
+    },
     {
       "version": "0.8.0",
       "date": "2026-11-26",
@@ -186,24 +217,24 @@
   "platforms": {
     "windows-x86_64": {
       "installerType": "nsis",
-      "fileName": "Sese-Gel_0.8.0_x64-setup.exe",
-      "url": "p-versions/v0.8.0/Sese-Gel_0.8.0_x64-setup.exe",
-      "sha256": "33c16fae3e59f642617751440c0fe67a80e67754f575dc537f00e50d30d016e0",
-      "sizeBytes": 4671675
+      "fileName": "Sese-Gel_0.8.2_x64-setup.exe",
+      "url": "p-versions/v0.8.2/Sese-Gel_0.8.2_x64-setup.exe",
+      "sha256": "46492a61c44c114586768f3b22a94c4c724edf4b3e6c6f3fe8ec6ec913e130a0",
+      "sizeBytes": 4669338
     },
     "windows-msi": {
       "installerType": "msi",
-      "fileName": "Sese-Gel_0.8.0_x64_en-US.msi",
-      "url": "p-versions/v0.8.0/Sese-Gel_0.8.0_x64_en-US.msi",
-      "sha256": "4c8a8447e357e9d81a5389119af01fa9f5301d8d65e3bceedb92777fc0eeb4e9",
-      "sizeBytes": 6643712
+      "fileName": "Sese-Gel_0.8.2_x64_en-US.msi",
+      "url": "p-versions/v0.8.2/Sese-Gel_0.8.2_x64_en-US.msi",
+      "sha256": "074af21a318eaa41d6710cc1a9698825bf4c6527a05dbe318a1c774272bc4dc7",
+      "sizeBytes": 6651904
     },
     "windows-portable": {
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
-      "url": "p-versions/v0.8.0/sesli-sohbet-app.exe",
-      "sha256": "0d3a3ef92205ada808b5a333b43c6be10407c7039d80c9396ab7adcfb75ea6d5",
-      "sizeBytes": 16723456
+      "url": "p-versions/v0.8.2/sesli-sohbet-app.exe",
+      "sha256": "073afa2013ff9aa349ac12f68d84bcbe6b8b3d232cc061e65134c362476b8d05",
+      "sizeBytes": 16736768
     }
   }
 }
