@@ -1,6 +1,6 @@
 {
   "version": "0.8.3",
-  "publishedAt": "2026-11-27T18:46:17.502Z",
+  "publishedAt": "2026-11-27T19:27:45.434Z",
   "notes": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri\n• [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).\n• [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.\n• [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).\n• [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.\n• [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.\n• [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
@@ -219,22 +219,22 @@
       "installerType": "nsis",
       "fileName": "Sese-Gel_0.8.3_x64-setup.exe",
       "url": "p-versions/v0.8.3/Sese-Gel_0.8.3_x64-setup.exe",
-      "sha256": "d585f311b5db660853b1c0e08931593e8017f94230c57adb800f1e3f12ec3168",
-      "sizeBytes": 6100714
+      "sha256": "044b1b1282d97530939ec148b7102951d5144037ab241e8532edea995e250272",
+      "sizeBytes": 6105604
     },
     "windows-msi": {
       "installerType": "msi",
       "fileName": "Sese-Gel_0.8.3_x64_en-US.msi",
       "url": "p-versions/v0.8.3/Sese-Gel_0.8.3_x64_en-US.msi",
-      "sha256": "adb83ef38a0199ed009c2d0daca81039bccc4db603c29fb4e202066206b3bdc6",
+      "sha256": "27056738cf302f45a6b219572f50d4e53ffd6fc927e94381b1fd1ae115cbecfe",
       "sizeBytes": 8560640
     },
     "windows-portable": {
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
       "url": "p-versions/v0.8.3/sesli-sohbet-app.exe",
-      "sha256": "66ba35fb6727c78ee22a5fdaec12663ddd7a7e67930d9b2e86681d7eaac866dd",
-      "sizeBytes": 21484032
+      "sha256": "7fe89edc66a461b985204961dde503bd54b3a17ddd875e07db0627df7ecfd151",
+      "sizeBytes": 21496320
     }
   }
 }
