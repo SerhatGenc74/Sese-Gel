@@ -1,0 +1,53 @@
+[v0.8.2] - 2026-11-26 | YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri
+- [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).
+- [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.
+- [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).
+- [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.
+- [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.
+- [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli "Mikrofonu Kapat/Ac", "Sesi Kapat/Ac" ve "Odadan Ayril" hizli kontrolleri eklendi.
+
+[v0.8.0] - 2026-11-26 | Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma
+- [Yeni] Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur.
+- [Yeni] Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi.
+- [Yeni] Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer.
+- [Performans] Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu.
+- [Duzeltme] Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi.
+
+[v0.7.3] - 2026-11-24 | Overlay Profil Fotolari, Yayin Cozunurlugu, Masaustu/Uygulama Sesi, Kanal Secimi ve Linux CI
+- [Yeni] Ekran/pencere paylasimina 480p / 720p HD / 1080p Full HD cozunurluk secimi ile Windows WASAPI uzerinden yankisiz Masaustu Sesi ve Secili Uygulama Sesi paylasimi eklendi; izleyiciler icin sahnede ozel yayin ses kontrolu eklendi.
+- [Yeni] Oda kurarken bulunulan rehber kanali (#genel vb.) dogrudan kart icinde goruntulenir ve aninda degistirilebilir; oda ust cubugunda da aktif kanal rozeti gosterilir.
+- [Yeni] GitHub Actions ve docs indirme portali Windows (NSIS/MSI/Portable) + Linux (AppImage/DEB) paketlerini tek yayin hattinda sunacak sekilde guncellendi.
+- [Duzeltme] Windows Win32 UpdateLayeredWindow overlay uzerinde WebP/JPEG profil fotograflarinin gercek gorsel olarak gorunmesi saglandi ve overlay basligindaki oda kodu gizlendi.
+- [Duzeltme] Ilk sesli gorusmeden cikis/oda kurma kilitlenmeleri zaman asimi korumalariyla giderildi ve modern studyo arayuz sesleri eklendi.
+
+[v0.7.0] - 2026-11-24 | Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim
+- [Yeni] Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur.
+- [Yeni] Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis.
+- [Tasarim] Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi.
+- [Duzeltme] Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller.
+
+[v0.5.1] - 2026-11-24 | Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme, Overlay ve Surum Klasorleme
+- [Yeni] Uygulama adi resmi olarak "Sese Gel" olarak guncellendi; masaustu, sistem tepsisi ve web indirme portali icin ozel studo ikonu eklendi.
+- [Yeni] Sesli gorusme sirasinda kamera acabilme ve karsi taraflarin canli goruntulerini kart icinde / odak sahnesinde izleyebilme ozelligi eklendi.
+- [Yeni] Yuksek kaliteli ekran paylasimi (getDisplayMedia) ve odakli sahne goruntuleyici (yayin secici + tam ekran) eklendi.
+- [Yeni] Sohbette gonderilen kendi mesajlarini satir ici duzenleme ("(duzenlendi)" etiketi) ve kalici olarak P2P silme ("Bu mesaj silindi") ozelligi eklendi.
+- [Yeni] Discord tarzi acilip kapanabilir sol ust overlay penceresi eklendi: aktif konusmacilari seffaf, ustte sabit ve tiklama gecirgen pencerede avatar + halka + susturma ikonlariyla gosterir.
+- [Yeni] version.json ana index.html yanina tasindi ve her surum paketi docs/p-versions/v<surum>/ alt klasorunde duzenlendi.
+- [Tasarim] Katilimci ses kartlari oval/yuvarlak studyo kapsulleri (oval capsule & halka tasarimi) olarak bastan tasarlandi.
+
+[v0.2.0] - 2026-11-24 | Yeni Sesli Oda Tasarimi, Dosya Onay Sistemi, RAM Optimizasyonu ve P1 Paketi
+- [Tasarim] Sesli sohbet sayfasi studyo kalitesinde bastan tasarlandi: ferah sahne yerlesimi, canli konusma dalga halkalari, oturum sayaci, modern cam alt kontrol cubugu ve tam yukseklik sohbet cekmecesi.
+- [Yeni] P2P dosya aktariminda karsi taraf icin Kabul Et / Reddet onay mekanizmasi eklendi; alici onaylamadan dosya parcaciklari gonderilmez.
+- [Yeni] Dosya gonderildiginde, alindiginda veya indirildiginde ekranda animasyonlu gorsel bildirim (feedback toast) ve "Indirildi" durumu gosterilir.
+- [Yeni] Araclar arasina yayinla.bat eklendi: alinan build paketlerini tek tikla docs/p-versions/ klasorune tasir, eski paketleri temizler ve versiyonu/yama notlarini gunceller.
+- [Performans] Dosya gonderiminde 25 MB'lik tam bellek kopyalama yerine 16 KB akisli parca okuma (file.slice), pencere gizliyken WebRTC/VAD yoklamalarini durdurma, bos Web Audio baglamlarini uyutma, oda ici MQTT rehberini durdurma ve mesaj gecmisini 150 ile sinirlama ile RAM kullanimi dusuruldu.
+- [Yeni] Oda icinden sohbeti kesmeden Ana Menu'ye donme (alt mini arama cubugu) ve kapat (X) tusunda sag alt sistem tepsisine kucultme eklendi.
+- [Yeni] Ev sahibi odadan tek basina ayrilip ayni odaya geri katilabilir; Iroh sabit kimlik tohumu ile kalici Sabit Kanallar olusturulabilir.
+- [Yeni] Sesli odalar icin sifre korumasi, canli sifre degistirme, katilimi acip kapama ve Web Audio arayuz/oda giris ses efektleri eklendi.
+- [Duzeltme] Oda kilitlendiginde oda sahibinin seslerinin kesilmesi hatasi ve Linux WebKitGTK mikrofon/oynatma ses sorunlari giderildi; TCP_NODELAY ve Opus SDP gecikme (ms) optimizasyonlari yapildi.
+
+[v0.1.0] - 2026-11-24 | Ilk Ekosistem Surumu
+- [Yeni] Web indirme portali (docs/index.html), docs/p-versions/ yapisi ve https://serhatgenc74.github.io/Sese-Gel adresinden otomatik guncelleme denetimi ve kurulum akisi eklendi.
+- [Yeni] localStorage uzerinde kalici profil adi, 160x160 sikistirilmis profil fotografi ve ses aygiti tercihleri eklendi.
+- [Yeni] P2P metin sohbeti ve 25 MB'a kadar gorsel/dosya aktarimi (RTCDataChannel) eklendi.
+- [Yeni] Ek sunucusuz MQTT-over-WSS canli aktif oda listesi ve seslisohbet:// derin baglanti ile tek tikla katılım eklendi.

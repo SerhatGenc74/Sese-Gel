@@ -1,0 +1,254 @@
+{
+  "version": "0.8.4",
+  "publishedAt": "2026-11-28T01:27:05.240Z",
+  "notes": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri\n• [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).\n• [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.\n• [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).\n• [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.\n• [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.\n• [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi.",
+  "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
+  "patches": [
+    {
+      "version": "0.8.2",
+      "date": "2026-11-26",
+      "title": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri",
+      "items": [
+        {
+          "tag": "Duzeltme",
+          "text": "Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama)."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS)."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi."
+        }
+      ]
+    },
+    {
+      "version": "0.8.0",
+      "date": "2026-11-26",
+      "title": "Canli Yayin Cizimi (Click-Through Overlay), Together, Bellek Optimizasyonu ve Oturum Kurtarma",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Ekran paylasimi uzerinde canli cizim (Screen Annotation) ozelligi eklendi: her izleyiciye otomatik renk atanir, Lazer (4.5 sn sonra yumusakca sonen) ve Kalici kalemle yayin uzerinde cizim yapilabilir; yayincinin paylastigi ekran/pencerede kontrolunu kisitlamayan (click-through, yakalamadan gizli) seffaf masaustu katmani ve izleyici kalemi kilidi sunulur."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Together (Birlikte Izle & Web Etkinlikleri) eklendi: sesli oda icinde senkronize YouTube izleme, ortak video kuyrugu ve birlikte web sahnesi destegi geldi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Kesintisiz Oturum Kurtarma, Host Migration ve Fallback iyilestirmeleri eklendi: ag kesintisinde veya ev sahibi ayrildiginda otomatik yeniden baglanma, ICE kurtarma, ev sahibi devri ve gelismis WebKitGTK ses fallback merkezi ile gorusmeler kesilmeden surer."
+        },
+        {
+          "tag": "Performans",
+          "text": "Bellek (RAM) optimizasyonu eklendi: pencere kucultuldugunde veya sistem tepsisine alindiginda arka plan bellek modu devreye girer; dinamik modul yukleme (code-splitting) ve zero-copy ekran yakalama tamponlariyla bellek kullanimi dusuruldu."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Ekran paylasimi acilinca olusan cokme sorunu giderildi: Windows WASAPI PROPVARIANT bellek bozulmasi ve GDI tutamac sizintisi duzeltildi; Linux Wayland/PipeWire WebKitGTK icin DMA-BUF cokme korumasi ve tekil izin isleyici eklendi."
+        }
+      ]
+    },
+    {
+      "version": "0.7.3",
+      "date": "2026-11-24",
+      "title": "Overlay Profil Fotolari, Yayin Cozunurlugu, Masaustu/Uygulama Sesi, Kanal Secimi ve Linux CI",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Ekran/pencere paylasimina 480p / 720p HD / 1080p Full HD cozunurluk secimi ile Windows WASAPI uzerinden yankisiz Masaustu Sesi ve Secili Uygulama Sesi paylasimi eklendi; izleyiciler icin sahnede ozel yayin ses kontrolu eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Oda kurarken bulunulan rehber kanali (#genel vb.) dogrudan kart icinde goruntulenir ve aninda degistirilebilir; oda ust cubugunda da aktif kanal rozeti gosterilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "GitHub Actions ve docs indirme portali Windows (NSIS/MSI/Portable) + Linux (AppImage/DEB) paketlerini tek yayin hattinda sunacak sekilde guncellendi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Windows Win32 UpdateLayeredWindow overlay uzerinde WebP/JPEG profil fotograflarinin gercek gorsel olarak gorunmesi saglandi ve overlay basligindaki oda kodu gizlendi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Ilk sesli gorusmeden cikis/oda kurma kilitlenmeleri zaman asimi korumalariyla giderildi ve modern studyo arayuz sesleri eklendi."
+        }
+      ]
+    },
+    {
+      "version": "0.7.0",
+      "date": "2026-11-24",
+      "title": "Node.js Bagimsiz Dahili Rust Sunucu, Studyo Gurultu Engelleyici ve Tum Uygulamada Yeni Obsidyen Tasarim",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Node.js bagimliligi tamamen kaldirildi: Tauri icerisine gomulu saf Rust Socket.IO v4 / Engine.IO v4 WebSocket sinyallesme sunucusu sayesinde tek tikla oda kurulur."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Studyo kalitesinde Gurultu Engelleyici (Noise Suppression) eklendi: Kapali, Standart ve Gelismis Studyo AI (Web Audio highpass + lowpass + kompresor + adaptif gurultu kapisi) modlari arasinda gorusme sirasinda anlik gecis."
+        },
+        {
+          "tag": "Tasarim",
+          "text": "Obsidyen Studyo cam ve oval tasarim dili ana menu, profil karti, sabit kanallar, canli oda listesi, ayar modallari ve web indirme portalinin tamamina yayildi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Web portalinda sayfa yenilerken eski surume dusen anlik surum yanip sonmesi giderildi; publish scripti HTML etiketini otomatik senkronlar ve semver dusmesini engeller."
+        }
+      ]
+    },
+    {
+      "version": "0.5.1",
+      "date": "2026-11-24",
+      "title": "Sese Gel Markasi, Kamera, Ekran Paylasimi, Mesaj Duzenleme/Silme, Overlay ve Surum Klasorleme",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Uygulama adi resmi olarak \"Sese Gel\" olarak guncellendi; masaustu, sistem tepsisi ve web indirme portali icin ozel studo ikonu eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sesli gorusme sirasinda kamera acabilme ve karsi taraflarin canli goruntulerini kart icinde / odak sahnesinde izleyebilme ozelligi eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Yuksek kaliteli ekran paylasimi (getDisplayMedia) ve odakli sahne goruntuleyici (yayin secici + tam ekran) eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sohbette gonderilen kendi mesajlarini satir ici duzenleme (\"(duzenlendi)\" etiketi) ve kalici olarak P2P silme (\"Bu mesaj silindi\") ozelligi eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Discord tarzi acilip kapanabilir sol ust overlay penceresi eklendi: aktif konusmacilari seffaf, ustte sabit ve tiklama gecirgen pencerede avatar + halka + susturma ikonlariyla gosterir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "version.json ana index.html yanina tasindi ve her surum paketi docs/p-versions/v<surum>/ alt klasorunde duzenlendi."
+        },
+        {
+          "tag": "Tasarim",
+          "text": "Katilimci ses kartlari oval/yuvarlak studyo kapsulleri (oval capsule & halka tasarimi) olarak bastan tasarlandi."
+        }
+      ]
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-11-24",
+      "title": "Yeni Sesli Oda Tasarimi, Dosya Onay Sistemi, RAM Optimizasyonu ve P1 Paketi",
+      "items": [
+        {
+          "tag": "Tasarim",
+          "text": "Sesli sohbet sayfasi studyo kalitesinde bastan tasarlandi: ferah sahne yerlesimi, canli konusma dalga halkalari, oturum sayaci, modern cam alt kontrol cubugu ve tam yukseklik sohbet cekmecesi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "P2P dosya aktariminda karsi taraf icin Kabul Et / Reddet onay mekanizmasi eklendi; alici onaylamadan dosya parcaciklari gonderilmez."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Dosya gonderildiginde, alindiginda veya indirildiginde ekranda animasyonlu gorsel bildirim (feedback toast) ve \"Indirildi\" durumu gosterilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Araclar arasina yayinla.bat eklendi: alinan build paketlerini tek tikla docs/p-versions/ klasorune tasir, eski paketleri temizler ve versiyonu/yama notlarini gunceller."
+        },
+        {
+          "tag": "Performans",
+          "text": "Dosya gonderiminde 25 MB'lik tam bellek kopyalama yerine 16 KB akisli parca okuma (file.slice), pencere gizliyken WebRTC/VAD yoklamalarini durdurma, bos Web Audio baglamlarini uyutma, oda ici MQTT rehberini durdurma ve mesaj gecmisini 150 ile sinirlama ile RAM kullanimi dusuruldu."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Oda icinden sohbeti kesmeden Ana Menu'ye donme (alt mini arama cubugu) ve kapat (X) tusunda sag alt sistem tepsisine kucultme eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ev sahibi odadan tek basina ayrilip ayni odaya geri katilabilir; Iroh sabit kimlik tohumu ile kalici Sabit Kanallar olusturulabilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Sesli odalar icin sifre korumasi, canli sifre degistirme, katilimi acip kapama ve Web Audio arayuz/oda giris ses efektleri eklendi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Oda kilitlendiginde oda sahibinin seslerinin kesilmesi hatasi ve Linux WebKitGTK mikrofon/oynatma ses sorunlari giderildi; TCP_NODELAY ve Opus SDP gecikme (ms) optimizasyonlari yapildi."
+        }
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-11-24",
+      "title": "Ilk Ekosistem Surumu",
+      "items": [
+        {
+          "tag": "Yeni",
+          "text": "Web indirme portali (docs/index.html), docs/p-versions/ yapisi ve https://serhatgenc74.github.io/Sese-Gel adresinden otomatik guncelleme denetimi ve kurulum akisi eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "localStorage uzerinde kalici profil adi, 160x160 sikistirilmis profil fotografi ve ses aygiti tercihleri eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "P2P metin sohbeti ve 25 MB'a kadar gorsel/dosya aktarimi (RTCDataChannel) eklendi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ek sunucusuz MQTT-over-WSS canli aktif oda listesi ve seslisohbet:// derin baglanti ile tek tikla katılım eklendi."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "windows-x86_64": {
+      "installerType": "nsis",
+      "fileName": "Sese-Gel_0.8.4_x64-setup.exe",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_x64-setup.exe",
+      "sha256": "f001b2a1fab9c660313c644fe5c63ec4aeb2d04d79ee541b2e004d9804204867",
+      "sizeBytes": 6646575
+    },
+    "windows-msi": {
+      "installerType": "msi",
+      "fileName": "Sese-Gel_0.8.4_x64_en-US.msi",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_x64_en-US.msi",
+      "sha256": "d7b5cd760e6afa811bbaeb05c722bfc6c8493a661e3d154aecc801f1b114d4f0",
+      "sizeBytes": 9310208
+    },
+    "windows-portable": {
+      "installerType": "portable",
+      "fileName": "sesli-sohbet-app.exe",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/sesli-sohbet-app.exe",
+      "sha256": "c5d0905eb55e862b8546979da7529fe1ba3c04e7123d1b70481c4bdb7dfa1fc0",
+      "sizeBytes": 23579136
+    },
+    "linux-x86_64": {
+      "installerType": "appimage",
+      "fileName": "Sese-Gel_0.8.4_amd64.AppImage",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_amd64.AppImage",
+      "sha256": "c77de5864723a5687fff3c3f6321b7f1a6246650319aa4265410b6f91a093485",
+      "sizeBytes": 87267832
+    },
+    "linux-deb": {
+      "installerType": "deb",
+      "fileName": "Sese-Gel_0.8.4_amd64.deb",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_amd64.deb",
+      "sha256": "54e0e489808f31d16c6a4968026ffc0c0f64ef9d5b566a785b0bf0cd8241a645",
+      "sizeBytes": 9566494
+    }
+  }
+}
