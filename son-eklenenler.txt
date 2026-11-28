@@ -1,3 +1,16 @@
+[v0.8.5] - 2026-11-28 | Yeni Arayuz: Kalici Sol Panel, Sade Lobi, Yenilenen Oda Ekrani ve Ayarlar
+- [Tasarim] Uygulama Discord benzeri notr bir renk paletine gecirildi; neon parlamalar, gradyan arka planlar ve asiri yuvarlak koseler kaldirilarak daha sade ve okunakli bir gorunum elde edildi.
+- [Yeni] Kalici sol panel eklendi: sabit kanallar, canli odalar, aktif ses baglantisi durumu ve kullanici seridi artik her ekranda tek yerden erisilebilir.
+- [Yeni] Lobi sadelestirildi: yeni karsilama ekrani, ayri "Oda Olustur" penceresi ve sabit kanal ekleme/duzenleme penceresi eklendi.
+- [Tasarim] Oda ekrani sadelestirildi: yeni ust baslik, oda bilgi paneli, 6 kontrollu alt cubuk (mikrofon, ses, kamera, ekran paylasimi, sohbet ve "Daha Fazla" menusu) ile kontroller tek yerde toplandi.
+- [Yeni] Ayarlar penceresi bastan duzenlendi: Hesap, Ses, Kisayollar, Gorunum, Gelismis (TURN relay dahil) ve Hakkinda sekmeleri eklendi; mikrofon testi ve ses tanilama ekranlari yenilendi.
+- [Tasarim] Tum butonlar, pencereler (modal), rozetler, acilir menuler, metin/secim kutulari ve anahtarlar ortak bilesenlere tasindi; uygulama genelinde gorunum ve davranis tutarli hale geldi.
+- [Yeni] Together bildirimleri "Etkinlik baslatti / Etkinlik sona erdi" olarak sadelestirildi.
+- [Duzeltme] Yerel Rust motorunda Windows kamera kodlayici cagrisi yeni imzaya uyarlanarak kamera yayininin derlenmeme sorunu giderildi.
+- [Yeni] Yayin akisi yenilendi: kurulum dosyalari ve indirme sitesi artik herkese acik Sese-Gel deposundan yayinlaniyor; dosya adlarindaki bosluklar nedeniyle kirilan indirme linkleri duzeltildi ve surum notlari otomatik olarak yayina ekleniyor.
+- [Yeni] yayinla.sh / yayinla.bat araclarina tek adimda yayin (surum artir + commit + tag push) ve basarisiz build sonrasi ayni surumu tekrar deneme secenekleri eklendi; surum artirma artik kilit dosyalarini (package-lock.json, Cargo.lock) da guncelliyor.
+- [Performans] Ic mimari temizlendi: dosya adlandirmalari ozellik klasorlerine gore duzenlendi, sabit renkler tasarim tokenlarina cevrildi, pano/tam ekran ve global kisayol dinleyicileri uygulama katmaninin arkasina alindi ve yeni birim testleri eklendi.
+
 [v0.8.2] - 2026-11-26 | YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri
 - [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).
 - [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.

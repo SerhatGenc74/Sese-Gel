@@ -1,9 +1,60 @@
 {
-  "version": "0.8.4",
-  "publishedAt": "2026-11-28T01:27:05.240Z",
-  "notes": "YouTube Together Duzeltmesi, Codenames & Gartic Phone, 30/60 FPS Yayin ve Tepsi Kontrolleri\n• [Duzeltme] Together icindeki YouTube Birlikte Izle oynaticisi Tauri masaustu ortaminda calisacak sekilde duzeltildi (iframe dogrudan olusturma, referrer policy, tauri.localhost origin filtreleme ve video secilmeden bos oynatici acilmamasini saglama).\n• [Yeni] Together oyun kutuphanesine Codenames ve Gartic Phone cok oyunculu oyunlari eklendi.\n• [Yeni] Ekran ve pencere paylasimi secicisine 30 FPS ve 60 FPS kare hizi secenekleri eklendi (varsayilan 30 FPS).\n• [Yeni] Yayinda kalem ozelligi acikken yayincinin ekrandaki tum cizimleri hizlica temizleyebilmesi icin ozellestirilebilir klavye kisayolu (varsayilan Ctrl+Shift+X) eklendi.\n• [Yeni] Uygulamaya tekil ornek (single-instance) destegi eklendi: uygulama zaten acikken simgeye tekrar tiklandiginda yeni pencere acmak yerine mevcut pencere one getirilir.\n• [Yeni] Sistem tepsisi (sag alt kucuk ikon) sag tik menusune canli \"Mikrofonu Kapat/Ac\", \"Sesi Kapat/Ac\" ve \"Odadan Ayril\" hizli kontrolleri eklendi.",
+  "version": "0.8.5",
+  "publishedAt": "2026-11-28T09:35:59.593Z",
+  "notes": "Yeni Arayuz: Kalici Sol Panel, Sade Lobi, Yenilenen Oda Ekrani ve Ayarlar\n• [Tasarim] Uygulama Discord benzeri notr bir renk paletine gecirildi; neon parlamalar, gradyan arka planlar ve asiri yuvarlak koseler kaldirilarak daha sade ve okunakli bir gorunum elde edildi.\n• [Yeni] Kalici sol panel eklendi: sabit kanallar, canli odalar, aktif ses baglantisi durumu ve kullanici seridi artik her ekranda tek yerden erisilebilir.\n• [Yeni] Lobi sadelestirildi: yeni karsilama ekrani, ayri \"Oda Olustur\" penceresi ve sabit kanal ekleme/duzenleme penceresi eklendi.\n• [Tasarim] Oda ekrani sadelestirildi: yeni ust baslik, oda bilgi paneli, 6 kontrollu alt cubuk (mikrofon, ses, kamera, ekran paylasimi, sohbet ve \"Daha Fazla\" menusu) ile kontroller tek yerde toplandi.\n• [Yeni] Ayarlar penceresi bastan duzenlendi: Hesap, Ses, Kisayollar, Gorunum, Gelismis (TURN relay dahil) ve Hakkinda sekmeleri eklendi; mikrofon testi ve ses tanilama ekranlari yenilendi.\n• [Tasarim] Tum butonlar, pencereler (modal), rozetler, acilir menuler, metin/secim kutulari ve anahtarlar ortak bilesenlere tasindi; uygulama genelinde gorunum ve davranis tutarli hale geldi.\n• [Yeni] Together bildirimleri \"Etkinlik baslatti / Etkinlik sona erdi\" olarak sadelestirildi.\n• [Duzeltme] Yerel Rust motorunda Windows kamera kodlayici cagrisi yeni imzaya uyarlanarak kamera yayininin derlenmeme sorunu giderildi.\n• [Yeni] Yayin akisi yenilendi: kurulum dosyalari ve indirme sitesi artik herkese acik Sese-Gel deposundan yayinlaniyor; dosya adlarindaki bosluklar nedeniyle kirilan indirme linkleri duzeltildi ve surum notlari otomatik olarak yayina ekleniyor.\n• [Yeni] yayinla.sh / yayinla.bat araclarina tek adimda yayin (surum artir + commit + tag push) ve basarisiz build sonrasi ayni surumu tekrar deneme secenekleri eklendi; surum artirma artik kilit dosyalarini (package-lock.json, Cargo.lock) da guncelliyor.\n• [Performans] Ic mimari temizlendi: dosya adlandirmalari ozellik klasorlerine gore duzenlendi, sabit renkler tasarim tokenlarina cevrildi, pano/tam ekran ve global kisayol dinleyicileri uygulama katmaninin arkasina alindi ve yeni birim testleri eklendi.",
   "siteUrl": "https://serhatgenc74.github.io/Sese-Gel",
   "patches": [
+    {
+      "version": "0.8.5",
+      "date": "2026-11-28",
+      "title": "Yeni Arayuz: Kalici Sol Panel, Sade Lobi, Yenilenen Oda Ekrani ve Ayarlar",
+      "items": [
+        {
+          "tag": "Tasarim",
+          "text": "Uygulama Discord benzeri notr bir renk paletine gecirildi; neon parlamalar, gradyan arka planlar ve asiri yuvarlak koseler kaldirilarak daha sade ve okunakli bir gorunum elde edildi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Kalici sol panel eklendi: sabit kanallar, canli odalar, aktif ses baglantisi durumu ve kullanici seridi artik her ekranda tek yerden erisilebilir."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Lobi sadelestirildi: yeni karsilama ekrani, ayri \"Oda Olustur\" penceresi ve sabit kanal ekleme/duzenleme penceresi eklendi."
+        },
+        {
+          "tag": "Tasarim",
+          "text": "Oda ekrani sadelestirildi: yeni ust baslik, oda bilgi paneli, 6 kontrollu alt cubuk (mikrofon, ses, kamera, ekran paylasimi, sohbet ve \"Daha Fazla\" menusu) ile kontroller tek yerde toplandi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Ayarlar penceresi bastan duzenlendi: Hesap, Ses, Kisayollar, Gorunum, Gelismis (TURN relay dahil) ve Hakkinda sekmeleri eklendi; mikrofon testi ve ses tanilama ekranlari yenilendi."
+        },
+        {
+          "tag": "Tasarim",
+          "text": "Tum butonlar, pencereler (modal), rozetler, acilir menuler, metin/secim kutulari ve anahtarlar ortak bilesenlere tasindi; uygulama genelinde gorunum ve davranis tutarli hale geldi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Together bildirimleri \"Etkinlik baslatti / Etkinlik sona erdi\" olarak sadelestirildi."
+        },
+        {
+          "tag": "Duzeltme",
+          "text": "Yerel Rust motorunda Windows kamera kodlayici cagrisi yeni imzaya uyarlanarak kamera yayininin derlenmeme sorunu giderildi."
+        },
+        {
+          "tag": "Yeni",
+          "text": "Yayin akisi yenilendi: kurulum dosyalari ve indirme sitesi artik herkese acik Sese-Gel deposundan yayinlaniyor; dosya adlarindaki bosluklar nedeniyle kirilan indirme linkleri duzeltildi ve surum notlari otomatik olarak yayina ekleniyor."
+        },
+        {
+          "tag": "Yeni",
+          "text": "yayinla.sh / yayinla.bat araclarina tek adimda yayin (surum artir + commit + tag push) ve basarisiz build sonrasi ayni surumu tekrar deneme secenekleri eklendi; surum artirma artik kilit dosyalarini (package-lock.json, Cargo.lock) da guncelliyor."
+        },
+        {
+          "tag": "Performans",
+          "text": "Ic mimari temizlendi: dosya adlandirmalari ozellik klasorlerine gore duzenlendi, sabit renkler tasarim tokenlarina cevrildi, pano/tam ekran ve global kisayol dinleyicileri uygulama katmaninin arkasina alindi ve yeni birim testleri eklendi."
+        }
+      ]
+    },
     {
       "version": "0.8.2",
       "date": "2026-11-26",
@@ -217,38 +268,38 @@
   "platforms": {
     "windows-x86_64": {
       "installerType": "nsis",
-      "fileName": "Sese-Gel_0.8.4_x64-setup.exe",
-      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_x64-setup.exe",
-      "sha256": "f001b2a1fab9c660313c644fe5c63ec4aeb2d04d79ee541b2e004d9804204867",
-      "sizeBytes": 6646575
+      "fileName": "Sese-Gel_0.8.5_x64-setup.exe",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.5/Sese-Gel_0.8.5_x64-setup.exe",
+      "sha256": "f4a0e64cc847312ab31ebbae396939466b547ef67e2d4b4a51bf558829393c6e",
+      "sizeBytes": 6648276
     },
     "windows-msi": {
       "installerType": "msi",
-      "fileName": "Sese-Gel_0.8.4_x64_en-US.msi",
-      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_x64_en-US.msi",
-      "sha256": "d7b5cd760e6afa811bbaeb05c722bfc6c8493a661e3d154aecc801f1b114d4f0",
+      "fileName": "Sese-Gel_0.8.5_x64_en-US.msi",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.5/Sese-Gel_0.8.5_x64_en-US.msi",
+      "sha256": "ec90fc74547426ab3eec5b4d95d9e1e6ab7915d6a076c6e253fc7b0c17693c69",
       "sizeBytes": 9310208
     },
     "windows-portable": {
       "installerType": "portable",
       "fileName": "sesli-sohbet-app.exe",
-      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/sesli-sohbet-app.exe",
-      "sha256": "c5d0905eb55e862b8546979da7529fe1ba3c04e7123d1b70481c4bdb7dfa1fc0",
-      "sizeBytes": 23579136
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.5/sesli-sohbet-app.exe",
+      "sha256": "458d7472a035a407084fb9e26f18b44af89ee94687bfc5d83c4ed1088c073102",
+      "sizeBytes": 23575040
     },
     "linux-x86_64": {
       "installerType": "appimage",
-      "fileName": "Sese-Gel_0.8.4_amd64.AppImage",
-      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_amd64.AppImage",
-      "sha256": "c77de5864723a5687fff3c3f6321b7f1a6246650319aa4265410b6f91a093485",
+      "fileName": "Sese-Gel_0.8.5_amd64.AppImage",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.5/Sese-Gel_0.8.5_amd64.AppImage",
+      "sha256": "9d485c68d182465da0ae58c2397e5078c0604355f1c5cfb6e7e8df11e860d1b1",
       "sizeBytes": 87267832
     },
     "linux-deb": {
       "installerType": "deb",
-      "fileName": "Sese-Gel_0.8.4_amd64.deb",
-      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.4/Sese-Gel_0.8.4_amd64.deb",
-      "sha256": "54e0e489808f31d16c6a4968026ffc0c0f64ef9d5b566a785b0bf0cd8241a645",
-      "sizeBytes": 9566494
+      "fileName": "Sese-Gel_0.8.5_amd64.deb",
+      "url": "https://github.com/SerhatGenc74/Sese-Gel/releases/download/v0.8.5/Sese-Gel_0.8.5_amd64.deb",
+      "sha256": "53cceeb67f74ef637c78c72be8338bc453b8fd57b491072c5f3258e3ecd665f0",
+      "sizeBytes": 9563992
     }
   }
 }
